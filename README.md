@@ -1,27 +1,58 @@
-# AngularTestTask
+# Общая информация
+Использованы следующие технологии:
+1. Angular
+2. TypeScript
+3. json-server
+4. rxjs
+5. fontawesome
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.0.0.
+# Настройка таблицы
 
-## Development server
+С помомощью файла tableconfig.json можно настроить общие параметры отображения таблицы.
+Пример:
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+[
+    {
+        "type": "id",
+        "viewTitle": "ID"
+        
+    },
+    {
+        "type": "delbutton",
+        "viewTitle": ""
+        
+    },
+    {
+        "type": "username",
+        "viewTitle": "Имя"
+        
+    },
+    {
+        "type": "message",
+        "viewTitle": "Сообщение"
+        
+    },
+    {
+        "type": "datetime",
+        "viewTitle": "Время"
+        
+    }
+]
 
-## Code scaffolding
+Имеется пять типов столбцов: id, delbutton, username, message, datetime. 
+Порядок объектов в массиве = порядок столбцов в таблице. 
+Если какой-то объект отсутствует, то отсутсвует и этот столбец.
+Также, с помощью ствойства viewTitle, можно назначить заголовки столбцов.
+Есть некоторые ограничения:
+1. Обязательна должен присутствовать столбец delbutton
+2. Должен быть как минимум один столбец кроме delbutton
+3. Не может быть меньше 2 и больше 5 столбцов
+4. Не может быть дубликатов столбцов
+В случае этих и других ошибок, конфиг отклоняется и берутся настройки по умолчанию.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+# Запуск приложения
+1. Скачать архив
+2. Распаковать архив в папку
+3. Запустить команду npm install
+4. Запустить приложение командой npm start
 
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
