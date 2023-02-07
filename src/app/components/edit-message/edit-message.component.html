@@ -1,0 +1,15 @@
+<div
+    class="edit-message"
+>
+    <textarea
+        class="edit-message_text"
+        placeholder="Сообщение"
+        [(ngModel)]="textMessage"
+    ></textarea>
+    <button
+        class="edit-message_button"
+        (click)="editMessage()"
+    >
+        Сохранить
+    </button>
+</div>

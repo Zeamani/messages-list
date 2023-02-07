@@ -1,0 +1,27 @@
+<header class="header">
+    <div class="header_input-search">
+        <input
+            [(ngModel)]="searchService.searchStr" 
+            (input)="searchMessage()"
+        >
+        <fa-icon 
+            [icon]="faMagnifyingGlass"
+            class="header_search-icon"
+        ></fa-icon>
+    </div>
+    <button 
+        class="header_add-button"
+        (click)="modal.open()"
+    >
+        Добавить
+    </button>
+</header>
+
+<app-modal 
+    *ngIf="modal.isVisible$ | async"
+    [closeFunc]="modal.close.bind(modal)"
+>
+    <app-create-message
+        [optionalFunc]="modal.close.bind(modal)"
+    ></app-create-message>
+</app-modal>

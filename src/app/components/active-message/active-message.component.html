@@ -1,0 +1,29 @@
+<div class="active-message-body">
+    <div
+        class="active-message-body_content"
+    >
+        <div class="active-message-body_head">
+            <span class="active-message-body_username">{{ activeMessage.username }}</span>
+            <span class="active-message-body_datetime">{{ activeMessage.datetime }}</span>
+        </div>
+        <p class="active-message-body_text">
+            {{ activeMessage.message }}
+        </p>
+    </div>
+    <button 
+        (click)="modal.open()"
+        class="active-message-body_edit-button"
+    >
+        Изменить
+    </button>
+</div>
+
+<app-modal 
+    *ngIf="modal.isVisible$ | async"
+    [closeFunc]="modal.close.bind(modal)"
+>
+    <app-edit-message
+        [optionalFunc]="modal.close.bind(modal)"
+        [activeMessage]="activeMessage"
+    ></app-edit-message>
+</app-modal>

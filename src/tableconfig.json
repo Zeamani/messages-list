@@ -1,0 +1,27 @@
+[
+    {
+        "type": "id",
+        "viewTitle": "ID"
+        
+    },
+    {
+        "type": "delbutton",
+        "viewTitle": ""
+        
+    },
+    {
+        "type": "username",
+        "viewTitle": "Имя"
+        
+    },
+    {
+        "type": "message",
+        "viewTitle": "Сообщение"
+        
+    },
+    {
+        "type": "datetime",
+        "viewTitle": "Время"
+        
+    }
+]

@@ -1,0 +1,20 @@
+<button
+    class="delbutton"
+    (click)="confirmDeleteMessage($event)"
+>
+    <fa-icon 
+        [icon]="faTrashCan"
+        class="delbutton_icon"
+    ></fa-icon>
+</button>
+
+<app-modal 
+    *ngIf="modal.isVisible$ | async"
+    [closeFunc]="modal.close.bind(modal)"
+>
+    <app-del-confirm
+        [cancelFunc]="modal.close.bind(modal)"
+        [idMessage]="value"
+    >
+    </app-del-confirm>
+</app-modal>

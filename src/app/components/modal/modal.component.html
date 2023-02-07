@@ -1,0 +1,15 @@
+<div 
+    class="modal"
+    (mousedown)="closeModal($event)"
+    (click)="$event.stopPropagation()"
+>
+    <div class="modal_body">
+        <button 
+            class="modal_close-button"
+            (click)="closeFunc()"
+        >
+            <fa-icon [icon]="faXmark"></fa-icon>
+        </button>
+        <ng-content></ng-content>
+    </div>
+</div>

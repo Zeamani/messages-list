@@ -1,0 +1,27 @@
+<main class="main">
+    <section class="main_body messages-list">
+        <app-messages-list 
+            class="messages-list_body"
+            [messagesList]="messagesData.messagesList$ | async | paginate: { itemsPerPage: 15, currentPage: page }"
+            [activeMessage]="activeMessage"
+        >
+        </app-messages-list>
+        <div class="messages-list_footer">
+            <pagination-controls class="my-pagination" (pageChange)="pageChanged($event)"></pagination-controls>
+        </div>
+    </section>
+    <section class="main_sidebar active-message">
+        <app-active-message 
+            class="active-message_body" 
+            *ngIf="activeMessage"
+            [activeMessage]="activeMessage" 
+        ></app-active-message>
+        <div 
+            class="active-message_plug" 
+            *ngIf="!activeMessage"
+        >
+            Ничего не выбрано
+        </div>
+    </section>
+</main>
+

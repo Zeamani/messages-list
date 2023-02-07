@@ -1,0 +1,18 @@
+.table-cell {
+    padding: 0 10px;
+    text-align: center;
+    white-space: nowrap;
+    border-bottom: 1px solid #f0f0f0;
+    height: 76.5px;
+    vertical-align: middle;
+    display: table-cell;
+
+    &:last-child {
+        padding-right: 60px;
+    }
+}
+
+.message {
+    width: 100%;
+    text-align: left;
+}

@@ -1,0 +1,24 @@
+<table class="messages-list-body">
+    <thead>
+        <tr>
+            <th
+                *ngFor="let col of tableConfig; let i = index"
+                [class]="col.type + '-col'"
+            >
+                {{ col.viewTitle }}
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        <app-message-item
+            *ngFor="let message of messagesList" 
+            class="messages-list-body_item"
+            [messageItem]="message"
+            (click)="activeMessageServ.changeActiveMessage(message)"
+            [ngClass]="{
+                'messages-list-body_item__active': activeMessage && activeMessage.id == message.id
+            }"
+        >
+        </app-message-item>
+    </tbody>
+</table>

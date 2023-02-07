@@ -1,0 +1,42 @@
+<div class="create-message">
+    <form 
+        [formGroup]="formCreate" 
+        (submit)="addNewMessage()"
+        class="create-message_form"
+    >
+        <input
+            type="text"
+            placeholder="Имя"
+            formControlName="authorMessage"
+        >
+        <textarea
+            type="text"
+            placeholder="Сообщение"
+            formControlName="textMessage"
+        >
+        </textarea>
+        <div class="create-message_datetime">
+            <input 
+                type="date" 
+                id="start" 
+                name="trip-start"
+                formControlName="dateMessage"
+            >
+            <input 
+                type="time" 
+                id="appt" 
+                name="appt"
+                formControlName="timeMessage"
+                step="2"
+            >
+        </div>
+
+        <button
+            type="submit"
+            [disabled]="formCreate.invalid"
+            class="create-message_button"
+        >
+            Добавить
+        </button>
+    </form>
+</div>
